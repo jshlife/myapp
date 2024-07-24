@@ -1,15 +1,16 @@
-import koreanize_matplotlib
+streamlit run main.py
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
 
 # Load data
 file_path = '202406_202406_연령별인구현황_월간.csv'
 data = pd.read_csv(file_path, encoding='cp949')
 
-# Convert numerical columns to integers
-for col in data.columns[3:]:
+# Preprocess data
+# Remove commas and convert numerical columns to integers
+for col in data.columns[1:]:
     data[col] = data[col].str.replace(',', '').astype(int)
 
 # Streamlit app
@@ -33,7 +34,7 @@ other_population_percentage = 100 - middle_school_percentage
 # Pie chart
 labels = '중학생 인구', '기타 인구'
 sizes = [middle_school_percentage, other_population_percentage]
-colors = ['#ff9999','#66b3ff']
+colors = ['#ff9999', '#66b3ff']
 explode = (0.1, 0)  # explode 1st slice
 
 fig1, ax1 = plt.subplots()
