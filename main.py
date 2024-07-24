@@ -2,7 +2,7 @@ import koreanize_matplotlib
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-streamlit run app.py
+
 
 # Load data
 file_path = '202406_202406_연령별인구현황_월간.csv'
