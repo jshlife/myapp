@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import koreanize_matplotlib
 
 # 데이터 로드
-file_path = '202406_202406_연령별인구현황_월간.csv'
+
 data = pd.read_csv(file_path, encoding='euc-kr')
 
 # 중학생 연령대 추출
